@@ -14,7 +14,7 @@ jobs:
 
       - name: Fetch action
         id: ftf
-        uses: ab185508/file-type-finder@master
+        uses: ab185508/file-type-finder@main
         with:
           path: ".github/"
           type: ".yml"
