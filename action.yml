@@ -1,0 +1,17 @@
+name: "File type finder action"
+description: "Provides a list of paths and/or file names for specified files in folder/directory"
+inputs:
+  path:
+    description: "Path to search for files in"
+    required: true
+  type:
+    description: "File type"
+    required: true
+outputs:
+  paths:
+    description: "Path of all the files with the extension"
+  names:
+    description: "Names of all files with the extension"
+runs:
+  using: "docker"
+  image: "Dockerfile"

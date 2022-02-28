@@ -1,0 +1,28 @@
+name: File type finder
+on: [push]
+jobs:
+  list:
+    name: File type finder
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.7"
+
+      - uses: actions/checkout@v1
+
+      - name: Fetch action
+        id: ftf
+        uses: ab185508/file-type-finder@master
+        with:
+          path: ".github/"
+          type: ".yml"
+
+      - name: Echo results (For visualization)
+        run: |
+          for i in ${{ steps.ftf.outputs.names }}; do
+          echo $i
+          for j in ${{ steps.ftf.outputs.paths }}; do
+          echo $j
+          done
