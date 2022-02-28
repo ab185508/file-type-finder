@@ -21,6 +21,6 @@ jobs:
 
       - name: Echo results (For visualization)
         run: |
-          echo ${{ steps.ftf.outputs.names }};
-          echo ${{ steps.ftf.outputs.paths }};
+          echo ${{ steps.ftf.outputs.names }}
+          echo ${{ steps.ftf.outputs.paths }}
           done
