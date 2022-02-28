@@ -21,8 +21,6 @@ jobs:
 
       - name: Echo results (For visualization)
         run: |
-          for i in ${{ steps.ftf.outputs.names }}; do
-          echo $i
-          for j in ${{ steps.ftf.outputs.paths }}; do
-          echo $j
+          echo ${{ steps.ftf.outputs.names }};
+          echo ${{ steps.ftf.outputs.paths }}; 
           done
