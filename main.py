@@ -9,8 +9,7 @@ def set_action_output(name: str, value: str):
 def main():
     path = os.environ["INPUT_PATH"]
     extension = os.environ["INPUT_TYPE"]
-
-    path_count = 0
+    
     paths = ''
     for root, dirs, files in os.walk(path):
         for file in files:
