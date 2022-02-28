@@ -16,8 +16,9 @@ def main():
         for file in files:
             if file.endswith(f'{extension}'):
                 path_str = root + '/' + str(file) + ' '
-                paths = paths.append(path_str)
-                names = names.append(os.path.splitext(file)[0])
+                paths.append(path_str)
+                names.append(os.path.splitext(file)[0])
+                return paths, names
 
     set_action_output('paths', paths)
     set_action_output('names', names)
