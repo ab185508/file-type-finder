@@ -15,7 +15,8 @@ def main():
     for root, dirs, files in os.walk(path):
         for file in files:
             if file.endswith(f'{extension}'):
-                paths = paths + root + '/' + str(file) + ' '
+                path_str = root + '/' + str(file) + ' '
+                paths = paths + path_str
                 names = names + os.path.splitext(file)[0]
 
     set_action_output('paths', paths)
