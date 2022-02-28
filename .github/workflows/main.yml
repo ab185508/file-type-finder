@@ -16,7 +16,7 @@ jobs:
         id: ftf
         uses: ab185508/file-type-finder@main
         with:
-          path: ".github/"
+          path: "/"
           type: ".yml"
 
       - name: Echo results (For visualization)
