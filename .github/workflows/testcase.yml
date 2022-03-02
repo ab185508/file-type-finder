@@ -25,7 +25,7 @@ jobs:
           path: "/"
           type: ".yml"
           fileinput: true
-          file: ${{ steps.files.outputs.modified }}
+          file: ${{ steps.files.outputs.added_modified }}
 
       - name: Echo results (For visualization)
         run: |
