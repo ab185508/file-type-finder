@@ -26,7 +26,9 @@ def main():
                 # path_str = root + '/' + str(file) + ' '
                 # paths.append(path_str)
                 paths.append(file)
-                names.append(os.path.splitext(file)[0])
+                splitpath = file.split('/')
+                filename = splitpath[len(splitpath)-1]
+                names.append(os.path.splitext(filename)[0])
     else:
         for root, dirs, files in os.walk(path):
             for file in files:
