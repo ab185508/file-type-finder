@@ -19,12 +19,13 @@ def main():
     paths = []
     names = []
     inputfiles = accessfile.split(',')
-    
+
     if input == "true":
         for file in inputfiles:
             if file.endswith(f'{extension}'):
-                path_str = root + '/' + str(file) + ' '
-                paths.append(path_str)
+                # path_str = root + '/' + str(file) + ' '
+                # paths.append(path_str)
+                paths.append(file)
                 names.append(os.path.splitext(file)[0])
     else:
         for root, dirs, files in os.walk(path):
