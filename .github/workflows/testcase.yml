@@ -2,7 +2,7 @@ name: Use case test
 on: [pull_request]
 jobs:
   list:
-    name: File type finder
+    name: Use case test
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python 3.7
