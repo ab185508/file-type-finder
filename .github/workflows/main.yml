@@ -1,5 +1,5 @@
 name: File type finder
-on: [push]
+on: [pull-request]
 jobs:
   list:
     name: File type finder
@@ -12,7 +12,7 @@ jobs:
 
       - uses: actions/checkout@v1
 
-      - name: Fetch action
+      - name: File type finder action
         id: ftf
         uses: ab185508/file-type-finder@main
         with:

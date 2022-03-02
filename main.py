@@ -1,30 +1,26 @@
 import os
 import sys
 
-
+# Takes values from main()and attaches them to output values in action.yml
 def set_action_output(name: str, value: str):
     sys.stdout.write(f'::set-output name={name}::{value}\n')
 
 
 def main():
+    # Obtain input variables
     path = os.environ["INPUT_PATH"]
-    print(path)
     extension = os.environ["INPUT_TYPE"]
-    print(extension)
     input = os.environ["INPUT_FILEINPUT"]
-    print(input)
     accessfile = os.environ["INPUT_FILE"]
-    print(accessfile)
     extadd = os.environ["INPUT_EXTCHANGE"]
-    print(extadd)
     ext = os.environ["INPUT_EXT"]
-    print(ext)
 
     paths = []
     names = []
     extaddpaths = []
     inputfiles = accessfile.split(',')
 
+    # Run through input to find files with desired extension
     if input == "true":
         for file in inputfiles:
             if file.endswith(f'{extension}'):
@@ -40,7 +36,7 @@ def main():
                     paths.append(path_str)
                     names.append(os.path.splitext(file)[0])
 
-
+    # Run through files to add changed extension (useful for file converting actions)
     if extadd == "true":
         for file in inputfiles:
             if file.endswith(f'{extension}'):
@@ -49,8 +45,6 @@ def main():
     set_action_output('paths', paths)
     set_action_output('names', names)
     set_action_output('extaddpaths', extaddpaths)
-    print(paths)
-    print(extaddpaths)
 
     sys.exit(0)
 
