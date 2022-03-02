@@ -2,7 +2,7 @@ name: Use case test
 on: [pull_request]
 jobs:
   list:
-    name: File type finder
+    name: Use case test
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python 3.7
@@ -25,7 +25,7 @@ jobs:
           path: "/"
           type: ".yml"
           fileinput: true
-          file: ${{ steps.files.outputs.modified }}
+          file: ${{ steps.files.outputs.added_modified }}
 
       - name: Echo results (For visualization)
         run: |
