@@ -15,16 +15,19 @@ def main():
     print(input)
     accessfile = os.environ["INPUT_FILE"]
     print(accessfile)
+    extadd = os.environ["INPUT_EXTCHANGE"]
+    print(extadd)
+    ext = os.environ["INPUT_EXT"]
+    print(ext)
 
     paths = []
     names = []
+    extpaths = []
     inputfiles = accessfile.split(',')
 
     if input == "true":
         for file in inputfiles:
             if file.endswith(f'{extension}'):
-                # path_str = root + '/' + str(file) + ' '
-                # paths.append(path_str)
                 paths.append(file)
                 splitpath = file.split('/')
                 filename = splitpath[len(splitpath)-1]
@@ -36,6 +39,11 @@ def main():
                     path_str = root + '/' + str(file) + ' '
                     paths.append(path_str)
                     names.append(os.path.splitext(file)[0])
+
+    if extadd == "true":
+        for file in inputfiles:
+            if file.endswith(f'{extension}'):
+                extpaths.append(os.path.splittext(file[0])+ext)
 
     set_action_output('paths', paths)
     set_action_output('names', names)

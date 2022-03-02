@@ -15,11 +15,20 @@ inputs:
   file:
     description: "Reference to file"
     required: false
+  extchange:
+    description: "Pass in if you want to add a file extension to original file (useful for conversion actions)"
+    required: false
+    default: false
+  ext:
+    description: "Extension you would like to change to"
+    required: false
 outputs:
   paths:
     description: "Path of all the files with the extension"
   names:
     description: "Names of all files with the extension"
+  extaddpaths:
+    description: "Path of all the files with the extension converted to new extension"
 runs:
   using: "docker"
   image: "Dockerfile"
