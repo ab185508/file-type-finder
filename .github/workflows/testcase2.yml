@@ -18,11 +18,10 @@ jobs:
         with:
           format: "csv"
 
-      - name: Fetch action
+      - name: File type finder action
         id: ftf
         uses: ab185508/file-type-finder@main
         with:
-          path: "/"
           type: ".drawio"
           fileinput: true
           file: ${{ steps.files.outputs.added_modified }}
