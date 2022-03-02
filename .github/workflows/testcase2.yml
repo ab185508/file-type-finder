@@ -1,8 +1,8 @@
-name: Use case test
+name: Test Case 2
 on: [pull_request]
 jobs:
   list:
-    name: Use case test
+    name: Test case 2
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python 3.7
@@ -23,11 +23,14 @@ jobs:
         uses: ab185508/file-type-finder@main
         with:
           path: "/"
-          type: ".yml"
+          type: ".drawio"
           fileinput: true
           file: ${{ steps.files.outputs.added_modified }}
+          extchange: true
+          ext: '.png'
 
       - name: Echo results (For visualization)
         run: |
           echo ${{ steps.ftf.outputs.names }}
+          echo ${{ steps.fts.outputs.extaddpaths }}
           echo ${{ steps.ftf.outputs.paths }}
