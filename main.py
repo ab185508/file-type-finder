@@ -47,6 +47,7 @@ def main():
 
     set_action_output('paths', paths)
     set_action_output('names', names)
+    set_action_output('extaddpaths', extpaths)
     print(paths)
 
     sys.exit(0)
