@@ -6,7 +6,7 @@ inputs:
     required: false
   type:
     description: "File type"
-    required: false
+    required: true
   fileinput:
     description: "Bool to confirm reference to a file"
     type: boolean
