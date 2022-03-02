@@ -18,8 +18,10 @@ def main():
 
     paths = []
     names = []
+    inputfiles = accessfile.split(',')
+    
     if input == "true":
-        for file in accessfile:
+        for file in inputfiles:
             if file.endswith(f'{extension}'):
                 path_str = root + '/' + str(file) + ' '
                 paths.append(path_str)
