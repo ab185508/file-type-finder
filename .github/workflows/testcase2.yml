@@ -32,4 +32,5 @@ jobs:
       - name: Echo results (For visualization)
         run: |
           echo ${{ steps.ftf.outputs.names }}
+          echo ${{ steps.fts.outputs.extaddpaths }}
           echo ${{ steps.ftf.outputs.paths }}
