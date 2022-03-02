@@ -41,15 +41,17 @@ def main():
                     paths.append(path_str)
                     names.append(os.path.splitext(file)[0])
 
+
     if extadd == "true":
         for file in inputfiles:
             if file.endswith(f'{extension}'):
-                extpaths.append(os.path.splitext(file[0])+ext_append)
+                extpaths.append(os.path.splitext(file)[0]+ext_append)
 
     set_action_output('paths', paths)
     set_action_output('names', names)
     set_action_output('extaddpaths', extpaths)
     print(paths)
+    print(extpaths)
 
     sys.exit(0)
 
