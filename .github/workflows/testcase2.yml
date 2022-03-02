@@ -25,7 +25,7 @@ jobs:
           path: "/"
           type: ".drawio"
           fileinput: true
-          file: ${{ steps.files.outputs.modified }}
+          file: ${{ steps.files.outputs.added_modified }}
           extchange: true
           ext: '.png'
 
