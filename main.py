@@ -8,9 +8,13 @@ def set_action_output(name: str, value: str):
 
 def main():
     path = os.environ["INPUT_PATH"]
+    print(path)
     extension = os.environ["INPUT_TYPE"]
+    print(extension)
     input = os.environ["INPUT_FILEINPUT"]
+    print(input)
     accessfile = os.environ["INPUT_FILE"]
+    print(accessfile)
 
     paths = []
     names = []
