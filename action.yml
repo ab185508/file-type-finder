@@ -3,10 +3,18 @@ description: "Provides a list of paths and/or file names for specified files in 
 inputs:
   path:
     description: "Path to search for files in"
-    required: true
+    required: false
   type:
     description: "File type"
-    required: true
+    required: false
+  fileinput:
+    description: "Bool to confirm reference to a file"
+    type: boolean
+    required: false
+    default: false
+  file:
+    description: "Reference to file"
+    required: false
 outputs:
   paths:
     description: "Path of all the files with the extension"
