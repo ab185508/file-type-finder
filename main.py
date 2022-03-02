@@ -24,6 +24,7 @@ def main():
     names = []
     extpaths = []
     inputfiles = accessfile.split(',')
+    ext_append = ext,
 
     if input == "true":
         for file in inputfiles:
@@ -43,7 +44,7 @@ def main():
     if extadd == "true":
         for file in inputfiles:
             if file.endswith(f'{extension}'):
-                extpaths.append(os.path.splitext(file[0])+ext)
+                extpaths.append(os.path.splitext(file[0])+ext_append)
 
     set_action_output('paths', paths)
     set_action_output('names', names)
