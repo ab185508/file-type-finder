@@ -1,8 +1,8 @@
-name: Use case test
+name: Test Case 1
 on: [pull_request]
 jobs:
   list:
-    name: Use case test
+    name: Test case 1
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python 3.7

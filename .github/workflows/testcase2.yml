@@ -1,0 +1,35 @@
+name: Test Case 2
+on: [pull_request]
+jobs:
+  list:
+    name: Test case 2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.7"
+
+      - uses: actions/checkout@v1
+
+      - name: Get modified files
+        id: files
+        uses: jitterbit/get-changed-files@v1
+        with:
+          format: "csv"
+
+      - name: Fetch action
+        id: ftf
+        uses: ab185508/file-type-finder@main
+        with:
+          path: "/"
+          type: ".drawio"
+          fileinput: true
+          file: ${{ steps.files.outputs.modified }}
+          extchange: true
+          ext: '.png'
+
+      - name: Echo results (For visualization)
+        run: |
+          echo ${{ steps.ftf.outputs.names }}
+          echo ${{ steps.ftf.outputs.paths }}
