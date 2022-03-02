@@ -33,3 +33,4 @@ jobs:
         run: |
           echo ${{ steps.ftf.outputs.names }}
           echo ${{ steps.ftf.outputs.paths }}
+          echo ${{ steps.ftf.outputs.extaddpaths }}
