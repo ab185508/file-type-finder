@@ -20,7 +20,7 @@ See [main.yml](.github/workflows/main.yml).
 
 ```type```: (Required) The type of file you want to search for.
 
-```fileinput```: (Optional) Boolean to indicate if you want to provide a file input. This is set to `false` by default.
+```fileinput```: (Optional) Boolean to indicate if you want to provide a file input instead of a path. This value is set to `false` by default.
 
 ```file```: (Optional) Path or reference to the file you are passing in. See [testcase1](.github/workflows/testcase1.yml) to see how this can be applied with a reference to an output from another action.
 
@@ -37,9 +37,9 @@ See [main.yml](.github/workflows/main.yml).
 
 # Example Workflows
 
-## Case 1 [testcase1](.github/workflows/testcase1.yml) 
+## [Case 1](.github/workflows/testcase1.yml) 
 
-Gets modified files using another action and takes in the CSV from that as input. Then it runs through the files and finds the ones that end in `.yml`.
+Gets modified files using another action and takes in the CSV from that as input. Then, it runs through the files and finds the ones that end in `.yml`.
 
 ```yaml
 - name: File type finder action
@@ -52,9 +52,9 @@ Gets modified files using another action and takes in the CSV from that as input
         file: ${{ steps.files.outputs.added_modified }}
 ```
 
-## Case 2 [testcase2](.github/workflows/testcase2.yml) 
+## [Case 2](.github/workflows/testcase2.yml) 
 
-Gets modified files using another action and takes in the CSV from that as input. Then it runs through the files to find the ones that end in `.drawio`, afterwhich it takes the extension for all those files and swaps it to `.png`.
+Gets modified files using another action and takes in the CSV from that as input. Then, it runs through the files to find the ones that end in `.drawio`. It then takes the extension for all those files and swaps it to `.png`.
 
 ```yaml
 - name: File type finder action
