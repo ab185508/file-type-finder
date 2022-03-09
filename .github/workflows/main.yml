@@ -1,5 +1,5 @@
 name: File type finder
-on: [pull-request]
+on: [pull_request]
 jobs:
   list:
     name: File type finder
