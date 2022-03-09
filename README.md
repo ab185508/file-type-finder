@@ -34,7 +34,29 @@ See [main.yml](.github/workflows/main.yml).
 
 Gets modified files using another action and takes in the CSV from that as input. Then it runs through the files and finds the ones that end in `.yml`.
 
+```yaml
+- name: File type finder action
+    id: ftf
+    uses: ab185508/file-type-finder@main
+    with:
+        path: "/"
+        type: ".yml"
+        fileinput: true
+        file: ${{ steps.files.outputs.added_modified }}
+```
+
 ## Case 2 [testcase2](.github/workflows/testcase2.yml) 
 
 Gets modified files using another action and takes in the CSV from that as input. Then it runs through the files to find the ones that end in `.drawio`, afterwhich it takes the extension for all those files and swaps it to `.png`.
 
+```yaml
+- name: File type finder action
+    id: ftf
+    uses: ab185508/file-type-finder@main
+    with:
+        type: ".drawio"
+        fileinput: true
+        file: ${{ steps.files.outputs.added_modified }}
+        extchange: true
+        ext: '.png'
+```
