@@ -4,7 +4,7 @@ File type finder lists paths and file names for files with certain extensions in
 
 # Usage
 
-See [main.yml](.github/workflows/main.yml).
+See [main.yml](.github/workflows/main.yml) for a basic usage example. This workflow will run through the entire repo and look for `.yml` files.
 
 ```yaml
 - name: File type finder action
@@ -20,7 +20,7 @@ See [main.yml](.github/workflows/main.yml).
 
 ```type```: (Required) The type of file you want to search for.
 
-```fileinput```: (Optional) Boolean to indicate if you want to provide a file input instead of a path. This value is set to `false` by default.
+```fileinput```: (Optional) Boolean to indicate if you want to provide a CSV file input instead of a path. This value is set to `false` by default.
 
 ```file```: (Optional) Path or reference to the file you are passing in. See [testcase1](.github/workflows/testcase1.yml) to see how this can be applied with a reference to an output from another action.
 
