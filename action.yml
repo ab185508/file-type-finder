@@ -32,3 +32,6 @@ outputs:
 runs:
   using: "docker"
   image: "Dockerfile"
+branding:
+  icon: search
+  color: green
